@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products — Spire General Dealers Limited</title>
+<meta name="description" content="Shop office supplies, electronics, furniture, solar power equipment, and construction materials.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="brandmark"><img src="assets/img/logo.png" alt="Spire General Dealers logo">SPIRE GENERAL DEALERS</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navMenu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="products.html" class="active">Products</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="cart-btn" id="cartToggle" aria-label="Open cart">
+        Cart <span class="cart-count" id="cartCount" style="display:none;">0</span>
+      </button>
+      <a href="contact.html" class="btn btn-primary btn-sm" style="display:none;" id="navQuoteBtn">Request a Quote</a>
+    </div>
+  </nav>
+</header>
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Products</h1>
+      <h1>Shop the Spire catalog</h1>
+      <p>Browse by category, add items to your cart, and send your order straight to us — by WhatsApp, email, or a direct message. No account needed.</p>
+    </div>
+  </section>
+
+  <div class="product-toolbar">
+    <div class="wrap">
+      <div class="tabs">
+        <button class="tab-btn active" data-category="All" type="button">All</button>
+        <button class="tab-btn" data-category="Office Supplies" type="button">Office Supplies</button>
+        <button class="tab-btn" data-category="Electronics" type="button">Electronics</button>
+        <button class="tab-btn" data-category="Furniture" type="button">Furniture</button>
+        <button class="tab-btn" data-category="Solar & Power" type="button">Solar &amp; Power</button>
+        <button class="tab-btn" data-category="Construction" type="button">Construction</button>
+      </div>
+    </div>
+  </div>
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="product-grid" id="productGrid"></div>
+      <p style="margin-top:36px; font-size:0.82rem; color:#8a8f99;">Prices shown in Zambian Kwacha (K) and are sample listings — confirm current pricing and stock when you send your order.</p>
+    </div>
+  </section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <div class="foot-left">
+      <img src="assets/img/logo.png" alt="Spire General Dealers logo">
+      <span>© 2026 Spire General Dealers Limited. Lusaka, Zambia.</span>
+    </div>
+    <div class="foot-links">
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <h3>Your Cart</h3>
+    <button class="cart-close" id="cartCloseBtn" aria-label="Close cart">&times;</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot">
+    <div class="cart-subtotal"><span>Subtotal</span><span id="cartSubtotal">K0</span></div>
+    <p class="send-label">Send this order via</p>
+    <div class="send-options">
+      <button class="send-btn whatsapp" id="sendWhatsApp" type="button">WhatsApp</button>
+      <button class="send-btn email" id="sendEmail" type="button">Email</button>
+      <button class="send-btn direct" id="sendDirect" type="button">Direct Message</button>
+    </div>
+  </div>
+</aside>
+
+<div class="modal-overlay" id="directModal">
+  <div class="modal-box">
+    <button class="modal-close" id="directModalClose" aria-label="Close">&times;</button>
+    <h3>Send us a direct message</h3>
+    <p class="hint">Leave your details and we'll follow up about your order.</p>
+    <form id="directForm">
+      <div class="modal-field">
+        <label for="dmName">Name</label>
+        <input type="text" id="dmName" required placeholder="Your name">
+      </div>
+      <div class="modal-field">
+        <label for="dmPhone">Phone</label>
+        <input type="tel" id="dmPhone" required placeholder="e.g. 0972 577 075">
+      </div>
+      <div class="modal-field">
+        <label for="dmNote">Note (optional)</label>
+        <textarea id="dmNote" placeholder="Delivery details, timing, questions..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+    </form>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>
